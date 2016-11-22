@@ -2,7 +2,7 @@ package com.goticks
 
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext
-import scalc.concurrent.Future
+import scala.concurrent.Future
 
 import akka.actor._
 import akka.pattern.ask
@@ -13,7 +13,7 @@ import akka.http.scaladsl.model.StatusCodes
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server._
 
-class RestApi(system: ActorSystem, timeout: TimeOut) extends RestRoutes {
+class RestApi(system: ActorSystem, timeout: Timeout) extends RestRoutes {
     implicit val requestTimeout = timeout
     implicit def executionContext = system.dispatcher
 
